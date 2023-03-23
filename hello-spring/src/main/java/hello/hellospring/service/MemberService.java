@@ -4,11 +4,15 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //@Service
+
+//JPA로 데이터를 저장및 검색할려면 트렌젝션안에서 실행되어야함
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
