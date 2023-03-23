@@ -49,10 +49,12 @@ public class MemberService {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
         */
-        vaildateDuplicateMember(member);
 
-        memberRepository.save(member);
-        return  member.getId();
+
+            vaildateDuplicateMember(member);
+
+            memberRepository.save(member);
+            return  member.getId();
     }
 
     private void vaildateDuplicateMember(Member member) {
